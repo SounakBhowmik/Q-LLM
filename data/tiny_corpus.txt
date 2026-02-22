@@ -1,0 +1,4 @@
+In the beginning there was language, and language shaped thought.
+Small models learn patterns from short texts, one character at a time.
+Quantum-inspired layers might enrich representations with new nonlinear structure.
+This tiny corpus exists only for sanity checks and CPU-friendly experiments.
