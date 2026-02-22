@@ -1,0 +1,32 @@
+seed: 1337
+
+data:
+  text_path: data/tiny_corpus.txt
+  block_size: 64
+  val_split: 0.1
+  num_workers: 0
+
+model:
+  d_model: 128
+  n_layers: 2
+  n_heads: 4
+  mlp_ratio: 4.0
+  dropout: 0.1
+  tie_weights: true
+
+quantum:
+  enabled: true
+  backend: pennylane
+  n_qubits: 4
+  q_layers: 2
+  placement: every_k
+  every_k_layers: 1
+  pooling: mean
+
+train:
+  batch_size: 4
+  lr: 0.001
+  weight_decay: 0.01
+  grad_clip: 1.0
+  max_steps: 40
+  run_root: runs

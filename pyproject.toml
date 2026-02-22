@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantum-llm"
+version = "0.1.0"
+description = "Minimal research scaffold for a quantum-enhanced character-level Transformer LM"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Q-LLM Team"}]
+dependencies = [
+  "torch==2.3.1",
+  "pyyaml==6.0.2",
+  "numpy==1.26.4",
+  "tqdm==4.66.5",
+]
+
+[project.optional-dependencies]
+quantum = ["pennylane==0.37.0"]
+dev = [
+  "pytest==8.3.2",
+  "black==24.8.0",
+  "ruff==0.6.4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
